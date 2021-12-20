@@ -1,0 +1,13 @@
+
+.tools--Open {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color:var(--backgroundButtons);
+}
+.tools--Open:hover {
+  background-color:var(--colorTextSoftGrey); 
+  cursor: pointer;
+}

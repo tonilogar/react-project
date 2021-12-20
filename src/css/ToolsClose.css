@@ -1,0 +1,9 @@
+.tools--Close {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color:var(--backgroundButtons);
+  display: none;
+}
