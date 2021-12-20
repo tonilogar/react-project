@@ -2,15 +2,16 @@ import React from "react"
 import '../css/ToolsOpen.css'
 
 function ToolsOpen() {
-  const state = React.useState()
+  const [state, setState] = React.useState(true)
   
   const onClickMenuTools = () => {
-    console.log('click')
+    setState(false)
   }
   return (
     <svg  className="tools--Open" 
           onClick={onClickMenuTools} 
           viewBox="0 0 92.833 92.833">
+          
       <g
         fill="#030000"
         stroke="#000"
