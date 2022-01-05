@@ -1,0 +1,15 @@
+
+.projects {
+  position: absolute;
+  top: 50px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color:var(--backgroundButtons);
+  display: none;
+}
+
+.projects:hover {
+  background-color:var(--colorTextSoftGrey); 
+  cursor: pointer;
+}

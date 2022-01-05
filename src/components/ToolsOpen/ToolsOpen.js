@@ -1,12 +1,12 @@
 import React from "react"
-import '../css/ToolsOpen.css'
+import './ToolsOpen.css'
 
-function ToolsOpen({ handleClickOpen }) {
+function ToolsOpen({ handleClick }) {
  
   return (
-    <svg  className="tools--Open01"
-          id="tools--Open01" 
-          onClick={handleClickOpen}
+    <svg  className="tools--Open"
+          id="tools--Open" 
+          onClick={handleClick}
           viewBox="0 0 92.833 92.833">
       <g
         fill="#030000"
@@ -26,4 +26,4 @@ function ToolsOpen({ handleClickOpen }) {
   )
 }
 
-export { ToolsOpen };
+export { ToolsOpen }

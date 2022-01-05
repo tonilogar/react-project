@@ -1,11 +1,11 @@
-import React from "react";
-import '../css/ToolsClose.css'
+import React from "react"
+import './ToolsClose.css'
 
-function ToolsClose({ state, handleClickClose }) {
+function ToolsClose({ handleClick }) {
   return (
-    <svg  className="tools--Close01" 
-          id="tools--Close01"
-          onClick={handleClickClose}
+    <svg  className="tools--Close" 
+          id="tools--Close"
+          onClick={handleClick}
           viewBox="0 0 92.833 92.833">
       <path
         fill="#1a1a1a"
@@ -23,7 +23,7 @@ function ToolsClose({ state, handleClickClose }) {
         d="M78.236 14.398L14.53 78.461"
       ></path>
     </svg>
-  );
+  )
 }
 
-export { ToolsClose };
+export { ToolsClose }
