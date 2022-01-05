@@ -1,13 +1,13 @@
+.tools--Open01:hover {
+  background-color:var(--colorTextSoftGrey); 
+  cursor: pointer;
+}
 
-.tools--Open {
+.tools--Open01 {
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 100px;
   width: 30px;
   height: 30px;
   background-color:var(--backgroundButtons);
-}
-.tools--Open:hover {
-  background-color:var(--colorTextSoftGrey); 
-  cursor: pointer;
 }

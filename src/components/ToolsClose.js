@@ -1,9 +1,12 @@
 import React from "react";
 import '../css/ToolsClose.css'
 
-function ToolsClose() {
+function ToolsClose({ state, handleClickClose }) {
   return (
-    <svg className="tools--Close" viewBox="0 0 92.833 92.833">
+    <svg  className="tools--Close01" 
+          id="tools--Close01"
+          onClick={handleClickClose}
+          viewBox="0 0 92.833 92.833">
       <path
         fill="#1a1a1a"
         stroke="#1a1a1a"

@@ -1,9 +1,13 @@
-.tools--Close {
+.tools--Close01:hover {
+  background-color:var(--colorTextSoftGrey); 
+  cursor: pointer;
+}
+
+.tools--Close01 {
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 150px;
   width: 30px;
   height: 30px;
   background-color:var(--backgroundButtons);
-  display: none;
 }
