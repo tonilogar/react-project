@@ -1,15 +1,13 @@
-
-.toolsClose {
+.info {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 215px;
+  right: 5px;
   width: 30px;
   height: 30px;
   background-color:var(--backgroundButtons);
-  display: none;
 }
 
-.toolsClose:hover {
+.info:hover {
   background-color:var(--colorTextSoftGrey); 
   cursor: pointer;
 }

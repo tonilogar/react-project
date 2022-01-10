@@ -1,15 +1,14 @@
 
-.toolsClose {
+.view_2D {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top:177px;
+  right: 5px;
   width: 30px;
   height: 30px;
   background-color:var(--backgroundButtons);
   display: none;
 }
-
-.toolsClose:hover {
+.view_2D:hover {
   background-color:var(--colorTextSoftGrey); 
   cursor: pointer;
 }

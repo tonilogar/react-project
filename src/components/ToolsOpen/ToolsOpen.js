@@ -4,8 +4,8 @@ import './ToolsOpen.css'
 function ToolsOpen({ handleClick }) {
  
   return (
-    <svg  className="tools--Open"
-          id="tools--Open" 
+    <svg  className="toolsOpen"
+          id="toolsOpen" 
           onClick={handleClick}
           viewBox="0 0 92.833 92.833">
       <g

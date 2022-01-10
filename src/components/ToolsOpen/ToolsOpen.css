@@ -1,5 +1,5 @@
 
-.tools--Open {
+.toolsOpen {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -8,7 +8,7 @@
   background-color:var(--backgroundButtons);
 }
 
-.tools--Open:hover {
+.toolsOpen:hover {
   background-color:var(--colorTextSoftGrey); 
   cursor: pointer;
 }

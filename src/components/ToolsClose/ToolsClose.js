@@ -3,8 +3,8 @@ import './ToolsClose.css'
 
 function ToolsClose({ handleClick }) {
   return (
-    <svg  className="tools--Close" 
-          id="tools--Close"
+    <svg  className="toolsClose" 
+          id="toolsClose"
           onClick={handleClick}
           viewBox="0 0 92.833 92.833">
       <path

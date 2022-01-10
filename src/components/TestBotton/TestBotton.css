@@ -1,15 +1,13 @@
-
-.toolsClose {
+.testBotton {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 253px;
+  right: 50px;
   width: 30px;
   height: 30px;
-  background-color:var(--backgroundButtons);
-  display: none;
+  background-color: red;
 }
 
-.toolsClose:hover {
+.testBotton:hover {
   background-color:var(--colorTextSoftGrey); 
   cursor: pointer;
 }
