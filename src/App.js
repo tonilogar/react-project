@@ -8,6 +8,7 @@ import { Layers } from './components/Layers/Layers'
 import { TestBotton } from './components/TestBotton/TestBotton'
 import { View_3D } from './components/View_3D/View_3D'
 import { View_2D } from './components/View_2D/View_2D'
+import { CompProps } from './components/TestComponents/CompProps/CompProps'
 import { MapBox } from './components/MapBox/MapBox'
 import { Tools } from './components/Tools'
 
@@ -58,6 +59,7 @@ function App() {
   return (
     <React.Fragment>
      {/*  <Tools show={show} handleClick={handleClick}/> */}
+      
       <ToolsOpen handleClick={handleClick}/>
       <ToolsClose handleClick={handleClick}/>
       <Projects handleClick={handleClick}/>
@@ -67,7 +69,9 @@ function App() {
       <TestBotton/>
       <View_3D handleClickView_3D_2D={handleClickView_3D_2D}/>
       <View_2D handleClickView_3D_2D={handleClickView_3D_2D}/>
-      <MapBox/>
+      <CompProps text='Soy un componente con props' />
+      {/* <MapBox/> */}
+      
       
     </React.Fragment>
   );
