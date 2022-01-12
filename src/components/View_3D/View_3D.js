@@ -2,13 +2,13 @@ import React from "react";
 import "./View_3D.css";
 import "../MapBox/MapBox.js"
 
-function View_3D({ handleClickView_3D_2D }) {
+function View_3D({ clickView_3D_2D }) {
   
   return (
     <svg
       className="view_3D"
       id="view_3D"
-      onClick={handleClickView_3D_2D}
+      onClick={clickView_3D_2D}
       viewBox="0 0 650 650"
     >
       <g stroke-width="9.9825" aria-label="3D">

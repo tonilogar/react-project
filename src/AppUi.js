@@ -13,51 +13,10 @@ import { CompChildren } from './components/TestComponents/CompChildren/CompChild
 import { MapBox } from './components/MapBox/MapBox'
 import { Tools } from './components/Tools'
 
-/* import './App.css'; */
-
-function App() {
-  
-  
-  /* const [show, setShow] = React.useState(false);
-  
-
-  const handleClick = () => {
-    setShow(!show)
-  } */
-
-  const [stateToolsMenu, setStateToolsMenu] = React.useState(true)
-  const [stateView_3D_2D, setStateView_3D_2D] = React.useState(true)
-
-  const clickTools = () => {
-    if (stateToolsMenu) {
-      document.getElementById("toolsOpen").style.display = "none"
-      document.getElementById("toolsClose").style.display = "block"
-      document.getElementById("projects").style.display = "block"
-      setStateToolsMenu(false)
-    }
-    else {
-      document.getElementById("toolsOpen").style.display = "block"
-      document.getElementById("toolsClose").style.display = "none"
-      document.getElementById("projects").style.display = "none"
-      setStateToolsMenu(true)
-    }
-  }
-  const clickView_3D_2D = () => {
-    if (stateView_3D_2D) {
-      document.getElementById("view_3D").style.display = "none"
-      document.getElementById("view_2D").style.display = "block"
-      setStateView_3D_2D(false)
-    }
-    else {
-      document.getElementById("view_3D").style.display = "block"
-      document.getElementById("view_2D").style.display = "none"
-      setStateView_3D_2D(true)
-    }
-  }
-  
-  
+function AppUi({clickTools, clickView_3D_2D,}) {
   
   return (
+    
     <React.Fragment>
      {/*  <Tools show={show} handleClick={handleClick}/> */}
       
@@ -73,11 +32,11 @@ function App() {
       <CompProps text='Soy un componente '
                  text1='con props' />
       <CompChildren> Soy un componente con children </CompChildren>
-      <MapBox/>
+      {/* <MapBox/> */}
       
       
     </React.Fragment>
-  );
-}
+  )
 
-export default App;
+}
+export { AppUi }

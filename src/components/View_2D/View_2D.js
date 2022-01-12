@@ -1,12 +1,12 @@
 import React from "react";
 import "./View_2D.css";
 
-function View_2D({ handleClickView_3D_2D }) {
+function View_2D({ clickView_3D_2D }) {
   return (
     <svg
       className="view_2D"
       id="view_2D"
-      onClick={handleClickView_3D_2D}
+      onClick={clickView_3D_2D}
       viewBox="0 0 650 650"
     >
       <g stroke-width="9.9825" aria-label="2D">
