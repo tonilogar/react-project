@@ -26,8 +26,8 @@ function App() {
       <Info/>
       <Layers/>
       <TestBotton/>
-      <CompProps text='Soy un componente '
-                 text1='con props' />
+      <CompProps pepe='Soy un componente '
+                 pepe1='con props' />
       <CompChildren > Soy un componente con children </CompChildren>
       <MapBox/>
       

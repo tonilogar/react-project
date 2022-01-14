@@ -1,11 +1,11 @@
 import React from "react";
 import "./CompProps.css";
 
-function CompProps(props) {
+const CompProps = ({ pepe, pepe1 }) => {
   return (
     <div className="compProps" id="compProps">
-    <h1> {props.text} </h1>
-    <h2> {props.text1} </h2>
+    <h1> {pepe} </h1>
+    <h2> {pepe1} </h2>
     </div>
   );
 }
