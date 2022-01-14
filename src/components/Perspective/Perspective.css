@@ -1,14 +1,16 @@
-
-.toolsOpen {
+.containerPerspective {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top:177px;
+  right: 5px;
   width: 30px;
   height: 30px;
   background-color:var(--backgroundButtons);
 }
-
-.toolsOpen:hover {
+.view_3D:hover, .view_2D:hover  {
   background-color:var(--colorTextSoftGrey); 
   cursor: pointer;
+}
+
+.view_2D {
+  display: none;
 }

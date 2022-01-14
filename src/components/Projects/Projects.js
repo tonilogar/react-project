@@ -1,7 +1,7 @@
 import React from "react"
 import "./Projects.css"
 
-function Projects({ handleClick }) {
+const Projects = () => {
   return (
     <svg className="projects" id="projects" viewBox="0 0 650 650">
       <g transform="matrix(1.8871 0 0 2.06 47.852 24.525)">

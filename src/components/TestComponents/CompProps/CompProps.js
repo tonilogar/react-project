@@ -3,7 +3,7 @@ import "./CompProps.css";
 
 function CompProps(props) {
   return (
-    <div className="compProps" id="compProps" viewBox="0 0 650 650">
+    <div className="compProps" id="compProps">
     <h1> {props.text} </h1>
     <h2> {props.text1} </h2>
     </div>

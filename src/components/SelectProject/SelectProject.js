@@ -2,7 +2,7 @@
 import React from "react"
 import "./SelectProject.css"
 
-function SelectProject() {
+const SelectProject = () => {
   
   return (
     

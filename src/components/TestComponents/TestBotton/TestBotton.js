@@ -5,7 +5,7 @@ const handleClickLayers = () => {
   document.getElementById("testBotton").style.height = '100px';
 }
 
-function TestBotton() {
+const TestBotton = () => {
   return (
     <svg  className="testBotton"
           id="testBotton"

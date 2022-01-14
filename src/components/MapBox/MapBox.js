@@ -31,7 +31,10 @@ function MapBox() {
       });
       // add the DEM source as a terrain layer with exaggerated height
       map.setTerrain({ source: "mapbox-dem", exaggeration: 1.5 });
-      
+      //catch the perspective value
+      const persppectiveValue = map.on('mouseup', function (event) {
+        console.log(map.getPitch())
+      })
       
 
       // add a sky layer that will show when the map is highly pitched
