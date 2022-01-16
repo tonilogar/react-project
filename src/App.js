@@ -7,6 +7,7 @@ import { Perspective } from './components/Perspective/Perspective'
 import { Info } from './components/Info/Info'
 import { Layers } from './components/Layers/Layers'
 import { TestBotton } from './components/TestComponents/TestBotton/TestBotton'
+import { ValuePersp } from './components/TestComponents/ValuePersp/ValuePersp'
 import { CompProps } from './components/TestComponents/CompProps/CompProps'
 import { CompChildren } from './components/TestComponents/CompChildren/CompChildren'
 import { MapBox } from './components/MapBox/MapBox'
@@ -25,7 +26,7 @@ function App() {
       {/* <SelectProject/> */}
       <Info/>
       <Layers/>
-      <TestBotton/>
+      <TestBotton> <ValuePersp/> </TestBotton>
       <CompProps pepe='Soy un componente '
                  pepe1='con props' />
       <CompChildren > Soy un componente con children </CompChildren>
