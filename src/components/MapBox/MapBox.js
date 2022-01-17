@@ -5,21 +5,27 @@ import "./MapBox.css";
 //State perspective value
 
 
-function MapBox() {
+function MapBox(persp, setPersp) {
 
-  const [perspectiveView, setPerspectiveView] = React.useState('0');
+ 
   mapboxgl.accessToken =
     "pk.eyJ1IjoidG9uaWxvZ2FyIiwiYSI6ImNqYjZlamY1dzBtMXEzM3FxbmppeXBpeHoifQ.DbzKh1wtO4p4QOUjj9eg1w";
 
   const mapContainerRef = useRef(null);
+
+  const [lng, setLng] = React.useState(1.38);
+  const [lat, setLat] = React.useState(41.5);
+  const [zoom, setZoom] = React.useState(7.9);
+  /* const [persp, setPersp] = React.useState(0); */
+
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: "mapbox://styles/mapbox/satellite-v9",
-      center: [1.38, 41.5],
+      center: [lng, lat],
       maxZoom: 25,
       minZoom: 1.65,
-      zoom: 7.9,
+      zoom: zoom,
     });
 
     /* Create DEM */
@@ -33,10 +39,6 @@ function MapBox() {
       // add the DEM source as a terrain layer with exaggerated height
       map.setTerrain({ source: "mapbox-dem", exaggeration: 1.5 });
 
-      
-      
-
-
       // add a sky layer that will show when the map is highly pitched
       map.addLayer({
         id: "sky",
@@ -48,17 +50,29 @@ function MapBox() {
         },
       });
     });
+
+    const perspective = map.on('move', () => {
+      setLng(map.getCenter().lng.toFixed(4));
+      setLat(map.getCenter().lat.toFixed(4));
+      setZoom(map.getZoom().toFixed(2));
+      setPersp(map.getPitch().toFixed(0));
+    });
+
+    return () => map.remove();
   }, []);
 //catch the perspective value
-const perspectiveValue = map.on('mouseup', function (event) {
+/* const perspectiveValue = map.on('mouseup', function (event) {
   console.log(map.getPitch())
-})
+}) */
   return (
-    <div 
-      className="map-container" 
-      ref={mapContainerRef} 
-      onChange={perspectiveValue}  />
-
+    <div className='map-container' ref={mapContainerRef}>
+      <div className='sidebarStyle'>
+        <div>
+        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} | Degree: {persp}
+        </div>
+      </div>
+    </div>
+    
   )
 }
 

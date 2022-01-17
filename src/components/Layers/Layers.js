@@ -1,7 +1,7 @@
 import React from 'react';
 import './Layers.css'
 
-const Layers = ({ handleClickLayers }) => {
+const Layers = () => {
   return (
     <svg  className="layers" 
     id="layers" 

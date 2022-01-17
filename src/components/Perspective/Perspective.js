@@ -33,7 +33,6 @@ const Perspective = () => {
       <svg
         className="view_3D"
         id="view_3D"
-        onClick={click}
         viewBox="0 0 650 650"
       >
         <g stroke-width="9.9825" aria-label="3D">

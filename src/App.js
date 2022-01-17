@@ -17,22 +17,22 @@ import { MapBox } from './components/MapBox/MapBox'
 /* import './App.css'; */
 
 function App() {
+  const [persp, setPersp] = React.useState(0);
   return (
     <React.Fragment>
-      <Tools/>
-      <Perspective/>
+      <Tools />
+      <Perspective />
 
       {/* <Projects/> */}
       {/* <SelectProject/> */}
-      <Info/>
-      <Layers/>
-      <TestBotton> <ValuePersp/> </TestBotton>
-      <CompProps pepe='Soy un componente '
-                 pepe1='con props' />
+      <Info />
+      <Layers />
+      <TestBotton> <ValuePersp /> </TestBotton>
+      <CompProps pepe='Soy un componente ' pepe1='con props' />
       <CompChildren > Soy un componente con children </CompChildren>
-      <MapBox/>
-      
-      
+      <MapBox persp={persp} setPersp={setPersp} />
+
+
     </React.Fragment>
   );
 }
