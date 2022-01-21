@@ -1,30 +1,27 @@
-import React, { useRef } from "react";
+import React, { useRef } from "react"
 import "./Perspective.css"
 
 const Perspective = (/* {switchDegree} */) => {
 
   const myRef_3D = useRef('block')
   const myRef_2D = useRef('none')
-  const [stateShowHide, setStateShowHide] = React.useState(true)
+  /* const [stateShowHide, setStateShowHide] = React.useState(true) */
 
-  const click = () => {
-    if (stateShowHide) {
-      myRef_3D.current.style.display = "none"
-      myRef_2D.current.style.display = "block"
-      setStateShowHide(false)
-    } else {
-      myRef_3D.current.style.display = "block"
-      myRef_2D.current.style.display = "none"
-      setStateShowHide(true)
-    }
+  const clickHide_3D = () => {
+    myRef_3D.current.style.display = "none"
+    myRef_2D.current.style.display = "block"
   } 
+  const clickHide_2D = () => {
+    myRef_3D.current.style.display = "block"
+    myRef_2D.current.style.display = "none"
+} 
   
   return (
     <div className="containerPerspective" id="containerPerspective">
       <svg
         className="view_3D"
         id="view_3D"
-        onClick={click}
+        onClick={clickHide_3D}
        /*  onClick={switchDegree}  */
         viewBox="0 0 650 650"
         ref={myRef_3D}
@@ -37,7 +34,7 @@ const Perspective = (/* {switchDegree} */) => {
       <svg
         className="view_2D"
         id="view_2D"
-        onClick={click}
+        onClick={clickHide_2D}
         /* onClick={switchDegree} */
         viewBox="0 0 650 650"
         ref={myRef_2D}
