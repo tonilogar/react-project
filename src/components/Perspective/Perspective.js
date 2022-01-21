@@ -16,7 +16,7 @@ const Perspective = () => {
     }
   }
 
-  const perspectiveValue = (valor) => {
+  /* const perspectiveValue = (valor) => {
     if (valor == 0) {
       document.getElementById("view_3D").style.display = "block"
       document.getElementById("view_2D").style.display = "none"
@@ -26,13 +26,14 @@ const Perspective = () => {
       document.getElementById("view_2D").style.display = "block"
       setStateShowHide(false)
     }
-  }
+  } */
 
   return (
     <div className="containerPerspective" id="containerPerspective">
       <svg
         className="view_3D"
         id="view_3D"
+        onClick={click}
         viewBox="0 0 650 650"
       >
         <g stroke-width="9.9825" aria-label="3D">

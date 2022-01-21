@@ -5,7 +5,7 @@ import "./MapBox.css";
 //State perspective value
 
 
-function MapBox(persp, setPersp) {
+function MapBox({ showHidePersp}, {perspective} ) {
 
  
   mapboxgl.accessToken =
@@ -16,7 +16,7 @@ function MapBox(persp, setPersp) {
   const [lng, setLng] = React.useState(1.38);
   const [lat, setLat] = React.useState(41.5);
   const [zoom, setZoom] = React.useState(7.9);
-  /* const [persp, setPersp] = React.useState(0); */
+  const [persp, setPersp] = React.useState(0);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -56,16 +56,18 @@ function MapBox(persp, setPersp) {
       setLat(map.getCenter().lat.toFixed(4));
       setZoom(map.getZoom().toFixed(2));
       setPersp(map.getPitch().toFixed(0));
+      return persp;
     });
-
+    //catch the perspective value
+    const perspectiveValue = map.on('mouseup', function (event) {
+      console.log(map.getPitch() + ' map getPitch')
+      return map.getPitch();
+    }) 
     return () => map.remove();
   }, []);
-//catch the perspective value
-/* const perspectiveValue = map.on('mouseup', function (event) {
-  console.log(map.getPitch())
-}) */
+
   return (
-    <div className='map-container' ref={mapContainerRef}>
+    <div className='map-container' ref={mapContainerRef} onContextMenuCapture={showHidePersp} >
       <div className='sidebarStyle'>
         <div>
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} | Degree: {persp}
