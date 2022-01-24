@@ -27,19 +27,9 @@ function MapBox() {
   const [lat, setLat] = React.useState(41.5);
   const [zoom, setZoom] = React.useState(7.9);
   const [degree, setDegree] = React.useState(0);
+  const [stateShowHide, setStateShowHide] = React.useState(true)
+  const [stateSwitch, setStateSwitch] = React.useState(false)
 
-  
-  
-  
-  const [map, setMap] = React.useState(new mapboxgl.Map({
-    container: mapContainerRef.current,
-    style: "mapbox://styles/mapbox/satellite-v9",
-    center: [lng, lat],
-    maxZoom: 25,
-    minZoom: 1.65,
-    zoom: zoom,
-    pitch: 0,
-  }));
     useEffect(() => {
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
@@ -48,14 +38,21 @@ function MapBox() {
         maxZoom: 25,
         minZoom: 1.65,
         zoom: zoom,
-        pitch: 0,
-      })
+      });
       
+      if (stateSwitch) {
+        console.log('map.setPitch(70)')
+        map.setPitch(70)
+      }
+      else {
+        console.log('map.setPitch(0)')
+        map.setPitch(0)
+      }
       //Catch de values lat lng
       map.on('mousemove', (e) => {
         setLng(e.lngLat.lat.toFixed(4))
         setLat(e.lngLat.lng.toFixed(4))
-      })
+      });
 
       //Catch de values zoom and degree
       map.on('move', () => {
@@ -69,37 +66,60 @@ function MapBox() {
         if (valueDegree == 0) {
           document.getElementById("view_3D").style.display = "block"
           document.getElementById("view_2D").style.display = "none"
+          setStateShowHide(true)
           console.log(valueDegree  + ' same 0')
         }
         else {
           document.getElementById("view_3D").style.display = "none"
           document.getElementById("view_2D").style.display = "block"
+          setStateShowHide(false)
           console.log(valueDegree  + ' diferent 0')
         }
-        
-      })
-      
+
+      });
+      /* const switchDegree = () => {
+        if (map.getPitch() === 0) {
+            map.setPitch(70)
+        }
+        else {
+          map.setPitch(0)
+        }
+      } */
     
       return () => map.remove();
-    }, [])
+    }, []);
     
-    
+    const switchDegree = () => {
+    console.log(degree + " degreehh")
+      if (stateShowHide) {
+        console.log( " pepe")
+        document.getElementById("view_3D").style.display = "none"
+        document.getElementById("view_2D").style.display = "block"
+        setStateShowHide(false)
+        setStateSwitch(false)
+      }
+      else {
+        document.getElementById("view_3D").style.display = "block"
+        document.getElementById("view_2D").style.display = "none"
+        setStateShowHide(true)
+        setStateSwitch(true)
+      }
+    }
   return (
 
     <React.Fragment>
-      <div className='map-container'  ref={mapContainerRef} ></div>
+      <div className='map-container' ref={mapContainerRef}></div>
       <Tools />
       
-      <Perspective/>
+      <Perspective switchDegree = {switchDegree}/>
       <CoorZoomDegree lng={lng} lat={lat} zoom={zoom} degree={degree}/>
-      <Info/>
+      <Info />
       <Layers />
-      
       
 
 
     </React.Fragment>
-  )
+  );
 }
 
-export {MapBox}
+export {MapBox};
